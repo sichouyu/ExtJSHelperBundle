@@ -4,5 +4,6 @@ services:
     arguments:
       - %qarea.extjshelper.twig.extension.extjs_root%
       - %qarea.extjshelper.twig.extension.type%
+      - %qarea.extjshelper.twig.extension.theme%
     tags:
       - { name: twig.extension }

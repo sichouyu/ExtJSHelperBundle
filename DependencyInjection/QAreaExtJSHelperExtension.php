@@ -8,17 +8,13 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
 /**
- * ExtJS Helper extension.
- *
  * @author Bogdan Tkachenko <bogus.weber@gmail.com>
  */
 class QAreaExtJSHelperExtension extends Extension
 {
     /**
-     * Extension loader.
-     *
-     * @param array                                                   $configs   Extension configs
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container Symfony container builder
+     * @param array            $configs
+     * @param ContainerBuilder $container
      */
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -33,6 +29,11 @@ class QAreaExtJSHelperExtension extends Extension
         $container->setParameter(
             'qarea.extjshelper.twig.extension.type',
             $config['type']
+        );
+
+        $container->setParameter(
+            'qarea.extjshelper.twig.extension.theme',
+            $config['theme']
         );
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
