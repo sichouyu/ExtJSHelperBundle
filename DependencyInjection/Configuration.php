@@ -25,11 +25,7 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->scalarNode('extjs_root')->defaultValue('http://cdn.sencha.io/ext-4.0.7-gpl/')->end()
-                ->arrayNode('environments')
-                    ->children()
-                        ->scalarNode('prod')->defaultValue('ext-all')->end()
-                        ->scalarNode('dev')->defaultValue('ext-all-dev')->end()
-                    ->end()
+                ->scalarNode('type')->defaultValue('ext-all-dev')->end()
             ->end()
         ;
 

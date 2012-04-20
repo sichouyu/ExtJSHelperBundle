@@ -2,8 +2,7 @@ services:
   qarea.extjshelper.twig.extension:
     class: QArea\ExtJSHelperBundle\Twig\Extensions\ExtJSExtension
     arguments:
-      - @kernel
       - %qarea.extjshelper.twig.extension.extjs_root%
-      - %qarea.extjshelper.twig.extension.environments%
+      - %qarea.extjshelper.twig.extension.type%
     tags:
       - { name: twig.extension }

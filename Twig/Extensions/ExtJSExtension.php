@@ -26,16 +26,13 @@ class ExtJSExtension extends \Twig_Extension
     private $_type;
 
     /**
-     * Class constructor.
-     *
-     * @param \Symfony\Component\HttpKernel\Kernel                        $kernel       Symfony kernel
-     * @param string                                                      $extJsRoot    ExtJS root directory
-     * @param array                                                       $environments ExtJS main file names for each $environment
+     * @param string $root ExtJS root directory
+     * @param string $type ExtJS main file name
      */
-    public function __construct(Kernel $kernel, $extJsRoot, array $environments)
+    public function __construct($root, $type)
     {
-        $this->_root = $extJsRoot;
-        $this->_type = $environments[$kernel->getEnvironment()];
+        $this->_root = $root;
+        $this->_type = $type;
     }
 
     /**

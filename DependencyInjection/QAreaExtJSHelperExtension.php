@@ -31,8 +31,8 @@ class QAreaExtJSHelperExtension extends Extension
         );
 
         $container->setParameter(
-            'qarea.extjshelper.twig.extension.environments',
-            $config['environments']
+            'qarea.extjshelper.twig.extension.type',
+            $config['type']
         );
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
